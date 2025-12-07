@@ -1,42 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --dark-base: #4A2C2A;
-  --main-accent: #835C42;
-  --soft-contrast: #D6B9A8;
-  --light-neutral: #F5F1EB;
-  --highlight: #DDA89B;
-  --deep-olive: #54503B;
-  --airy-accent: #ECE8E3;
-
+  --background: #0f172a;
+  --background-soft: rgba(15, 23, 42, 0.7);
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #f97316;
+  --accent-soft: rgba(249, 115, 22, 0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-soft: var(--background-soft);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-      --background: #54503B;
-  --foreground: #000000;
-  --dark-base: #4A2C2A;
-  --main-accent: #835C42;
-  --soft-contrast: #D6B9A8;
-  --light-neutral: #F5F1EB;
-  --highlight: #DDA89B;
-  --deep-olive: #54503B;
-  --airy-accent: #ECE8E3;
-  --foreground: #f9f9f9;
+    --background: #f8fafc;
+    --background-soft: rgba(248, 250, 252, 0.8);
+    --foreground: #0f172a;
+    --muted: #475569;
+    --accent: #ea580c;
+    --accent-soft: rgba(234, 88, 12, 0.14);
   }
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(148, 163, 184, 0.12), transparent 55%),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  letter-spacing: -0.01em;
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+::selection {
+  background: var(--accent);
+  color: #0f172a;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.14);
+  color: var(--muted);
+  padding: 0.25rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.08), rgba(148, 163, 184, 0.03));
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(18px);
+}
+
+.stat-card {
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 20px 40px -24px rgba(15, 23, 42, 0.6);
+  width: fit-content;
+  margin: 1rem;
 }
