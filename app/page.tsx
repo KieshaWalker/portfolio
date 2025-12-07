@@ -335,9 +335,9 @@ export default function Home() {
 
       <section id="contact" className="glass-card overflow-hidden px-8 py-16 text-center sm:px-12">
         <div className="mx-auto max-w-2xl space-y-6">
-          <span className="tag">Let's build what's next</span>
+          <span className="tag">Let&apos;s build what&apos;s next</span>
           <h2 className="text-3xl font-semibold sm:text-4xl">
-            Want to move faster without breaking trust? Let's talk roadmap, delivery, and outcomes that stick.
+            Want to move faster without breaking trust? Let&apos;s talk roadmap, delivery, and outcomes that stick.
           </h2>
           <p className="text-sm text-muted sm:text-base">
             Email, call, or tap into the case studies. I come prepared with vision, execution plans, and the sleeves rolled up.
